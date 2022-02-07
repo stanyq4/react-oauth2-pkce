@@ -31,6 +31,9 @@ function postWithFormData(tokenEndpoint: string, formData: FormData){
   return fetch(tokenEndpoint, {
     method: 'POST',
     body: formData,
+    headers: {
+       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    },
   })
     .then((response) => response.json()
       .then((body: any): any => {
